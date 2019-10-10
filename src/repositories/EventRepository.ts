@@ -10,16 +10,20 @@ export default class EventRepository {
 	}
 
 	public async findById(id: string): Promise<IEvent> {
-		return await EventModel.findById(id)
-			.catch(err => {
-				throw err
-			})
+		return await EventModel.findById(id).catch(err => {
+			throw err
+		})
 	}
 
 	public async findByUserId(user_id: string): Promise<IEvent> {
-		return await EventModel.find({ user: user_id })
-			.catch(err => {
-				throw err
-			})
+		return await EventModel.find({ user: user_id }).catch(err => {
+			throw err
+		})
+	}
+
+	public async findAll(): Promise<IEvent[]> {
+		return await EventModel.find().catch(err => {
+			throw err
+		})
 	}
 }

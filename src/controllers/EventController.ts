@@ -48,4 +48,15 @@ export default class EventController {
 			res.status(500).send({ message: e.message })
 		}
 	}
+
+	getAll = async (req: Request, res: Response) => {
+		console.log("[Event] Find All...")
+		try {
+			let response: IEvent[] = await this.eventRepository.findAll()
+
+			res.status(200).send(response)
+		} catch (e) {
+			res.status(500).send({ message: e.message })
+		}
+	}
 }

@@ -15,6 +15,7 @@ export default class EventRoute implements IRoute {
 	public registerRoute(app: Application): void {
 		app.use(this.prefix, this.routes.post("/", this.eventController.create))
 		app.use(this.prefix, this.routes.get("/:id", this.eventController.getById))
+		app.use(this.prefix, this.routes.get("/", this.eventController.getAll))
 		app.use(this.prefix, this.routes.get("/user/:user_id", this.eventController.getByUserId))
 	}
 }
