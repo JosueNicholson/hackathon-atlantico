@@ -14,4 +14,13 @@ export default class TranscriptionRepository {
 			throw err
 		})
 	}
+
+	public async updateBody(id: string, body: string, status: string): Promise<ITranscription> {
+		return await TranscriptionModel.updateOne(
+			{ lecture_id: id },
+			{ $set: { body: body, status: status } }
+		).catch(err => {
+			throw err
+		})
+	}
 }

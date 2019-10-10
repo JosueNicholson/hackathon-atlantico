@@ -3,7 +3,7 @@ import IRoute from "../base/IRoute"
 import TranscriptionController from "../controllers/TranscriptionController"
 
 export default class TranscriptionRoute implements IRoute {
-    private prefix: any 
+    private prefix: any
     private routes = Router()
     private transcriptionController: TranscriptionController
 
@@ -11,8 +11,9 @@ export default class TranscriptionRoute implements IRoute {
         this.prefix = prefix
         this.transcriptionController = new TranscriptionController()
     }
-    
+
     public registerRoute(app: Application): void {
         app.use(this.prefix, this.routes.post("/", this.transcriptionController.create))
+        app.use(this.prefix, this.routes.put("/", this.transcriptionController.updateTranscriptionBody))
     }
 }

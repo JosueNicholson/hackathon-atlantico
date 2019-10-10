@@ -4,24 +4,24 @@ import ILecture from "./interfaces/ILecture"
 const Schema = new mongoose.Schema({
 	event_id: {
 		type: mongoose.Schema.Types.String,
-		ref: "Event"
+		ref: "Events"
 	},
 	speaker_id: {
 		type: mongoose.Schema.Types.String,
-		ref: "Speaker",
+		ref: "Speakers",
 		required: [true, "The field 'speaker_id' is required"]
 	},
 	file_id: {
 		type: mongoose.Schema.Types.String,
-		ref: "File"
+		ref: "Files"
 	},
 	transcription_id: {
 		type: mongoose.Schema.Types.String,
-		ref: "Transcription"
+		ref: "Transcriptions"
 	},
 	abstract_id: {
 		type: mongoose.Schema.Types.String,
-		ref: "Abstract"
+		ref: "Abstracts"
 	},
 	date: {
 		type: Date,
