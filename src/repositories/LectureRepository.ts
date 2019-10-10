@@ -12,7 +12,7 @@ export default class LectureRepository {
 	public async findById(id: string): Promise<ILecture> {
 		return await LectureModel.findById(id)
 			.populate("file_id")
-			.populate("transcript_id")
+			.populate("transcription_id")
 			.catch(err => {
 				throw err
 			})
@@ -21,7 +21,7 @@ export default class LectureRepository {
 	public async findByEventId(id: string): Promise<ILecture> {
 		return await LectureModel.find({ event_id: id })
 			.populate("file_id")
-			.populate("transcript_id")
+			.populate("transcription_id")
 			.catch(err => {
 				throw err
 			})
