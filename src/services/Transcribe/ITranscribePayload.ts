@@ -1,4 +1,4 @@
-export default interface IAlgumaCoisa {
+export default interface ITranscribePayload {
 	LanguageCode: string
 	Media: {
 		MediaFileUri: string
