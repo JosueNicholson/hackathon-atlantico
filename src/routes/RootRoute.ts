@@ -14,6 +14,7 @@ export default class RootRoute implements IRoute {
 	}
 
 	private serverInfo(req: Request, res: Response) {
+		console.log("[Root Route]")
 		return res
 			.status(200)
 			.send({

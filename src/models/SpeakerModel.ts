@@ -24,4 +24,4 @@ const Schema = new mongoose.Schema({
 	createdAt: { type: Date, default: Date.now }
 })
 
-export default mongoose.model<ISpeaker & mongoose.Document>("Speaker", Schema)
+export default mongoose.model<ISpeaker & mongoose.Document>("Speakers", Schema)

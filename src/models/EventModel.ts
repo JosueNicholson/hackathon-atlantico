@@ -41,4 +41,4 @@ const Schema = new mongoose.Schema({
 	updatedAt: { type: Date, default: Date.now }
 })
 
-export default mongoose.model<IEvent & mongoose.Document>("Event", Schema)
+export default mongoose.model<IEvent & mongoose.Document>("Events", Schema)

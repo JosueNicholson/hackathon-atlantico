@@ -37,8 +37,8 @@ export default class ServerApplication {
 	private initMiddlewares(): void {
 		this.app.use(cors())
 		this.app.use(helmet())
-		this.app.use(bodyParser.json({ limit: "10mb" }))
-		this.app.use(bodyParser.urlencoded({ extended: true, limit: "10mb" }))
+		this.app.use(bodyParser.json({ limit: "50mb" }))
+		this.app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }))
 	}
 
 	private initRoutes(): void {

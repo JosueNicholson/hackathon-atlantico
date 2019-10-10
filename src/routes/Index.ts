@@ -5,6 +5,7 @@ import EventRoute from "./EventRoute"
 import SpeakerRoute from "./SpeakerRoute"
 import LectureRoute from "./LectureRoute"
 import FileRoute from "./FileRoute"
+import TranscriptionRoute from "./TranscriptionRoute"
 
 export default class Index {
 	public static initRoutes(): IRoute[] {
@@ -16,6 +17,7 @@ export default class Index {
 		routes.push(new SpeakerRoute("/speaker"))
 		routes.push(new LectureRoute("/lecture"))
 		routes.push(new FileRoute("/file"))
+		routes.push(new TranscriptionRoute("/transcription"))
 
 		return routes
 	}

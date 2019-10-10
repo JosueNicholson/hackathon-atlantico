@@ -21,4 +21,4 @@ const Schema = new mongoose.Schema({
 	updatedAt: { type: Date, default: Date.now }
 })
 
-export default mongoose.model<IAbstract & mongoose.Document>("Abstract", Schema)
+export default mongoose.model<IAbstract & mongoose.Document>("Abstracts", Schema)

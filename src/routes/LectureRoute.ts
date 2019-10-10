@@ -14,6 +14,7 @@ export default class LectureRoute implements IRoute {
 
 	public registerRoute(app: Application): void {
 		app.use(this.prefix, this.routes.post("/", this.lectureController.create))
+		app.use(this.prefix, this.routes.put("/status", this.lectureController.setStatus))
 		app.use(this.prefix, this.routes.get("/:id", this.lectureController.getById))
 		app.use(this.prefix, this.routes.get("/event/:event_id", this.lectureController.getByEventId))
 	}

@@ -8,7 +8,8 @@ const Schema = new mongoose.Schema({
 	lecture_id: {
 		type: mongoose.Schema.Types.String,
 		ref: "Lecture",
-		required: [true, "The field 'lecture' is required!"]
+		unique: true,
+		required: [true, "The field 'lecture_id' is required!"]
 	},
 	url: {
 		type: String,
@@ -21,4 +22,4 @@ const Schema = new mongoose.Schema({
 	createdAt: { type: Date, default: Date.now }
 })
 
-export default mongoose.model<IFile & mongoose.Document>("File", Schema)
+export default mongoose.model<IFile & mongoose.Document>("Files", Schema)

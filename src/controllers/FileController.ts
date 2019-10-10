@@ -17,10 +17,14 @@ export default class EventController {
 	create = async (req: Request, res: Response) => {
 		console.log("[File] Create File...")
 		try {
-			let { lecture_id, base64Audio } = req.body
+			console.log(req.body)
+			let { lecture_id, baseAudio } = req.body
+
+			if (!lecture_id) throw new Error("lecture_id is required!")
+			if (!baseAudio) throw new Error("baseAudio is required!")
 
 			let file: IFile = {
-        _id: uuid(),
+				_id: uuid(),
 				lecture_id: lecture_id,
 				status: "AVAILABLE",
 				url: ""
@@ -28,8 +32,7 @@ export default class EventController {
 
 			// Save no Storage
 			let audio: IAudioPayload = {
-				base64Audio: base64Audio,
-				file_id: file["_id"],
+				baseAudio: baseAudio,
 				lecture_id: lecture_id
 			}
 
@@ -43,6 +46,7 @@ export default class EventController {
 
 			res.status(201).send({ message: "Success!", data: response })
 		} catch (e) {
+			console.log(e.message)
 			res.status(500).send({ message: e.message })
 		}
 	}

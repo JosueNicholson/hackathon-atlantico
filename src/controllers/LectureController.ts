@@ -54,6 +54,21 @@ export default class LectureController {
 		}
 	}
 
+	setStatus = async (req: Request, res: Response) => {
+		console.log("[Lecture] Set Status...")
+		try {
+			let { id, status } = req.body
+			console.log(req.body)
+			if (!id || !status) throw new Error("ID or Status not informed")
+
+			let response: ILecture = await this.lectureRepository.updateStatus(id, status)
+
+			res.status(200).send({ message: "Success!", data: response })
+		} catch (e) {
+			res.status(500).send({ message: e.message })
+		}
+	}
+
 	setFileId = async (req: Request, res: Response) => {}
 
 	setTranscriptionId = async (req: Request, res: Response) => {}

@@ -7,7 +7,8 @@ const Schema = new mongoose.Schema({
 		ref: "Lecture"
 	},
 	status: {
-		type: String
+		type: String,
+		enum: ["AVAILABLE", "IN_PROGRESS", "UNAVAILABLE"]
 	},
 	title: {
 		type: String
@@ -18,4 +19,4 @@ const Schema = new mongoose.Schema({
 	createdAt: { type: Date, default: Date.now }
 })
 
-export default mongoose.model<ITranscription & mongoose.Document>("Transcription", Schema)
+export default mongoose.model<ITranscription & mongoose.Document>("Transcriptions", Schema)

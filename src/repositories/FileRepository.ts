@@ -9,15 +9,6 @@ export default class FileRepository {
 		})
 	}
 
-	// public async setUrl(id: string, url: string): Promise<IFile> {
-	// 	return await FileModel.updateOne(
-	// 		{ _id: id },
-	// 		{ $set: { url: url, status: "AVAILABLE" } }
-	// 	).catch(err => {
-	// 		throw err
-	// 	})
-	// }
-
 	public async findById(id: string): Promise<IFile> {
 		return await FileModel.findById(id).catch(err => {
 			throw err

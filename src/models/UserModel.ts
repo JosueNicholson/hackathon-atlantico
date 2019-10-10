@@ -23,4 +23,4 @@ const Schema = new mongoose.Schema({
 })
 
 Schema.index({ geo_loc: "2dsphere" })
-export default mongoose.model<IUser & mongoose.Document>("User", Schema)
+export default mongoose.model<IUser & mongoose.Document>("Users", Schema)

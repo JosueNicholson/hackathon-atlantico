@@ -12,16 +12,16 @@ export default class StorageService {
 
 	public async uploadAudio(imgPld: IAudioPayload): Promise<string> {
 		let buffer: Buffer = Buffer.from(
-			imgPld.base64Audio.replace(/^data:image\/\w+;base64,/, ""),
+			imgPld.baseAudio.replace("data:audio/mp3;base64,", ""),
 			"base64"
 		)
 
 		let putObject: PutObjectRequest = {
 			Bucket: this.mainBucket,
-			Key: `lectures/${imgPld.lecture_id}/${imgPld.file_id}`,
+			Key: `audios/${imgPld.lecture_id}`,
 			Body: buffer,
 			ContentEncoding: "base64",
-			ContentType: "image/jpeg"
+			ContentType: "audio/mp3"
 		}
 
 		return await this.uploadFile(putObject).catch(err => {
@@ -42,4 +42,31 @@ export default class StorageService {
 
 		return location
 	}
+
+	// public async uploadAudioStream(imgPld: IAudioPayload): Promise<string> {
+	// 	let buffer: Buffer = Buffer.from(
+	// 		imgPld.base64Audio.replace(/^data:image\/\w+;base64,/, ""),
+	// 		"base64"
+	// 	)
+
+	// 	let putObject: PutObjectRequest = {
+	// 		Bucket: this.mainBucket,
+	// 		Key: `lectures/${imgPld.lecture_id}/${imgPld.file_id}`,
+	// 		Body: buffer,
+	// 		ContentEncoding: "base64",
+	// 		ContentType: "image/jpeg"
+	// 	}
+
+	// 	let location: string = ""
+
+	// 	await this.storage
+	// 		.upl(putObject)
+	// 		.promise()
+	// 		.then(data => (location = data.Location))
+	// 		.catch(err => {
+	// 			throw new Error(err.message)
+	// 		})
+
+	// 	return location
+	// }
 }

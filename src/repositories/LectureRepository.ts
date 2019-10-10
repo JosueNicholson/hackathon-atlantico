@@ -20,4 +20,10 @@ export default class LectureRepository {
 			throw err
 		})
 	}
+
+	public async updateStatus(id: string, status: string): Promise<ILecture> {
+		return await LectureModel.updateOne({ _id: id }, { status: status }).catch(err => {
+			throw err
+		})
+	}
 }

@@ -1,14 +1,14 @@
-enum TranscriptionStatus {
-  AVAILABLE,
-  IN_PROGRESS,
-  UNAVAILABLE
-}
+// enum TranscriptionStatus {
+//   AVAILABLE,
+//   IN_PROGRESS,
+//   UNAVAILABLE
+// }
 
 export default interface ITranscription {
-  _id: string
+  _id?: string
   lecture_id: string
-  status: TranscriptionStatus
+  status: string
 	title: string
 	body: string
-	createdAt: Date
+	createdAt?: Date
 }
