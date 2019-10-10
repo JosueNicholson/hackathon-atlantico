@@ -13,6 +13,7 @@ export default class LectureRepository {
 		return await LectureModel.findById(id)
 			.populate("file_id")
 			.populate("transcription_id")
+			.populate("speaker_id")
 			.catch(err => {
 				throw err
 			})
@@ -22,6 +23,7 @@ export default class LectureRepository {
 		return await LectureModel.find({ event_id: id })
 			.populate("file_id")
 			.populate("transcription_id")
+			.populate("speaker_id")
 			.catch(err => {
 				throw err
 			})

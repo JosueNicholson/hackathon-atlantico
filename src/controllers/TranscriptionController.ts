@@ -20,7 +20,6 @@ export default class TranscriptionController {
 	create = async (req: Request, res: Response) => {
 		console.log("[Transcription] Create Transcription...")
 		try {
-			// console.log(req.body)
 
 			const { bucketUrl, key } = req.body
 			let lecture_id = key.replace("audios/", "").replace(".mp3", "")

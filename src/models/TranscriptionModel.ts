@@ -4,7 +4,8 @@ import ITranscription from "./interfaces/ITranscription"
 const Schema = new mongoose.Schema({
 	lecture_id: {
 		type: mongoose.Schema.Types.String,
-		ref: "Lecture"
+		ref: "Lecture",
+		unique: true
 	},
 	status: {
 		type: String,

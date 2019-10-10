@@ -14,4 +14,10 @@ export default class SpeakerRepository {
 			throw err
 		})
 	}
+
+	public async findAll(): Promise<ISpeaker[]> {
+		return await SpeakerModel.find().catch(err => {
+			throw err
+		})
+	}
 }

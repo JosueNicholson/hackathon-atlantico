@@ -21,5 +21,28 @@ export default class SpeakerController {
 		} catch (e) {
 			res.status(500).send({ message: e.message })
 		}
-  }
+	}
+
+	getById = async (req: Request, res: Response) => {
+		console.log("[Speaker] Get All...")
+		try {
+			let { id } = req.params
+			let response: ISpeaker = await this.speakerRepository.findById(id)
+
+			res.status(200).send({ message: "Success!", data: response })
+		} catch (e) {
+			res.status(500).send({ message: e.message })
+		}
+	}
+
+	getAll = async (req: Request, res: Response) => {
+		console.log("[Speaker] Get All...")
+		try {
+			let response: ISpeaker[] = await this.speakerRepository.findAll()
+
+			res.status(200).send({ message: "Success!", data: response })
+		} catch (e) {
+			res.status(500).send({ message: e.message })
+		}
+	}
 }

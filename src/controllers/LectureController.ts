@@ -16,9 +16,9 @@ export default class LectureController {
 			let lecture: ILecture = req.body
 
 			lecture.status = "NOT_STARTED"
-			lecture.file_id = ""
-			lecture.transcription_id = ""
-			lecture.abstract_id = ""
+			// lecture.file_id = ""
+			// lecture.transcription_id = ""
+			// lecture.abstract_id = ""
 
 			let response: ILecture = await this.lectureRepository.create(lecture)
 

@@ -14,5 +14,7 @@ export default class SpeakerRoute implements IRoute {
 
 	public registerRoute(app: Application): void {
 		app.use(this.prefix, this.routes.post("/", this.speakerController.create))
+		app.use(this.prefix, this.routes.get("/", this.speakerController.getAll))
+		app.use(this.prefix, this.routes.get("/:id", this.speakerController.getById))
 	}
 }
