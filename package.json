@@ -1,0 +1,56 @@
+{
+  "name": "folium-api",
+  "version": "0.5.3",
+  "description": "The server side from Folium Work Corporation",
+  "main": "bin/server.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --no-cache",
+    "start": "npm run build && node dist/bin/server.js",
+    "dev": "nodemon --watch \"src/\" --exec \"sucrase-node bin/server.ts\" -e ts"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "\\.test\\.ts",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "author": "Rafael Lima, Josué Nicholson",
+  "license": "ISC",
+  "dependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/body-parser": "^1.17.0",
+    "@types/cors": "^2.8.5",
+    "@types/helmet": "0.0.43",
+    "@types/jest": "^24.0.15",
+    "@types/mongoose": "^5.5.9",
+    "@types/supertest": "^2.0.8",
+    "@types/uuid": "^3.4.5",
+    "aws-sdk": "^2.513.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "helmet": "^3.19.0",
+    "jest": "^24.8.0",
+    "mongoose": "^5.6.5",
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "sucrase": "^3.10.1",
+    "tslint": "^5.18.0"
+  }
+}
